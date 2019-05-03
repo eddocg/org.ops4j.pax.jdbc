@@ -18,8 +18,7 @@
     specific language governing permissions and limitations
     under the License.
 
--->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+--><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -95,6 +94,7 @@
         <slf4j.version>1.6.4</slf4j.version>
         <sqlite.version>3.16.1</sqlite.version>
         <hikaricp.version>2.4.11</hikaricp.version>
+		<snowflake.version>3.7.1</snowflake.version>
     </properties>
 
     <scm>
@@ -130,7 +130,8 @@
         <module>pax-jdbc-teradata</module>
         <module>pax-jdbc-pool-common</module>
         <module>pax-jdbc-pool-c3p0</module>
-    </modules>
+		<module>pax-jdbc-snowflake</module>
+  </modules>
 
     <dependencyManagement>
         <dependencies>
@@ -424,7 +425,11 @@
                 <artifactId>mariadb-java-client</artifactId>
                 <version>${mariadb.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>net.snowflake</groupId>
+                <artifactId>snowflake-jdbc</artifactId>
+                <version>${snowflake.version}</version>
+            </dependency>
             <!-- Other dependencies -->
 
             <dependency>
@@ -702,7 +707,7 @@
                                 <include>**/*.cfg</include>
                                 <include>**/*.properties</include>
                             </includes>
-                            <excludes />
+                            <excludes/>
                             <mapping>
                                 <!--<README>SCRIPT_STYLE</README>-->
                             </mapping>

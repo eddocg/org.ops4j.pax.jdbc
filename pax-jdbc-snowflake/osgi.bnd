@@ -1,0 +1,12 @@
+Bundle-SymbolicName:\
+  org.ops4j.pax.jdbc.snowflake
+
+Bundle-Activator:\
+  org.ops4j.pax.jdbc.snowflake.impl.Activator
+
+Private-Package:\
+  org.ops4j.pax.jdbc.common,\
+  org.ops4j.pax.jdbc.snowflake.impl
+
+Import-Package:\
+  *

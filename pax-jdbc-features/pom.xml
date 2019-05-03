@@ -175,7 +175,12 @@
             <version>${project.version}</version>
             <scope>runtime</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.ops4j.pax.jdbc</groupId>
+            <artifactId>pax-jdbc-snowflake</artifactId>
+            <version>${project.version}</version>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
         <build>
@@ -254,6 +259,7 @@
                                     <feature>pax-jdbc-pool-aries</feature>
                                     <feature>pax-jdbc-pool-narayana</feature>
                                     <feature>pax-jdbc-pool-transx</feature>
+									<feature>pax-jdbc-snowflake</feature>
                                 </features>
                                 <verifyTransitive>false</verifyTransitive>
                                 <ignoreMissingConditions>true</ignoreMissingConditions>
